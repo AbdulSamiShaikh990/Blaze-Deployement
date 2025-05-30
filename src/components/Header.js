@@ -24,7 +24,7 @@ const Header = () => {
   useEffect(() => {
     const fetchAllProducts = async () => {
       try {
-        const response = await axios.get('https://blaze-deployement.vercel.app/api/products');
+        const response = await axios.get('https://blaze-deployement-1.vercel.app/api/products');
         setAllProducts(response.data);
       } catch (error) {
         console.error('Error fetching products:', error);

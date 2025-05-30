@@ -36,7 +36,7 @@ export function AuthProvider({ children }) {
       });
       
       // Create user in MongoDB
-      await axios.post('https://blaze-deployement.vercel.app/api/auth/register', {
+      await axios.post('https://blaze-deployement-1.vercel.app/api/auth/register', {
         name,
         email,
         password,
@@ -58,7 +58,7 @@ export function AuthProvider({ children }) {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       
       // Get user data from MongoDB
-      const response = await axios.post('https://blaze-deployement.vercel.app/api/auth/login', {
+      const response = await axios.post('https://blaze-deployement-1.vercel.app/api/auth/login', {
         email,
         firebaseUid: userCredential.user.uid
       });
@@ -82,7 +82,7 @@ export function AuthProvider({ children }) {
       
       // Check if user exists in MongoDB, if not create one
       try {
-        const response = await axios.post('https://blaze-deployement.vercel.app/api/auth/google-login', {
+        const response = await axios.post('https://blaze-deployement-1.vercel.app/api/auth/google-login', {
           name: userCredential.user.displayName,
           email: userCredential.user.email,
           firebaseUid: userCredential.user.uid
@@ -132,7 +132,7 @@ export function AuthProvider({ children }) {
       await updateProfile(user, profile);
       
       // Update user in MongoDB
-      await axios.put('https://blaze-deployement.vercel.app/api/users/profile', {
+      await axios.put('https://blaze-deployement-1.vercel.app/api/users/profile', {
         name: profile.displayName,
         photoURL: profile.photoURL
       }, {
