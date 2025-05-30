@@ -68,7 +68,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Start server
+// Start server - Updated for Vercel deployment
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
